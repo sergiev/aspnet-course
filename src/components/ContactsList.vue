@@ -4,12 +4,14 @@
       <th>Id</th>
       <th>Name</th>
       <th>Address</th>
+      <th></th>
     </thead>
     <tbody>
       <tr v-for="row in contacts" :key="row.Id">
         <td>{{ row.Id }}</td>
         <td>{{ row.Name }}</td>
         <td>{{ row.Address }}</td>
+        <td><button @click="clicked(row)">соси жопу</button></td>
       </tr>
     </tbody>
   </table>
@@ -18,21 +20,9 @@
 export default {
   data: function() {
     return {
-      contacts: [{
-          Id: 1,
-          Name: "Pavel",
-          Address: "Botanicheskaya"
-        },
-        {
-          Id: 2,
-          Name: "Semen",
-          Address: "Botanicheskaya"
-        },
-        {
-          Id: 3,
-          Name: "Oleg",
-          Address: "Dickinstan"
-        }
+      contacts: [{ Id: 1, Name: "Pavel", Address: "Botanicheskaya" },
+        { Id: 2, Name: "ДАННЫЕ", Address: "УДАЛЕНЫ" },
+        { Id: 3, Name: "Oleg", Address: "Святая Русь"}
       ]
     }
   }
