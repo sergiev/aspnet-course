@@ -11,7 +11,7 @@
         <td>{{ row.Id }}</td>
         <td>{{ row.Name }}</td>
         <td>{{ row.Address }}</td>
-        <td><button @click="clicked(row)">соси жопу</button></td>
+        <td><a class="button is-danger" @click="clicked(row)">Удалить</a></td>
       </tr>
     </tbody>
   </table>
@@ -20,7 +20,8 @@
 export default {
   data: function() {
     return {
-      contacts: [{ Id: 1, Name: "Pavel", Address: "Botanicheskaya" },
+      contacts: [
+      	{ Id: 1, Name: "Pavel", Address: "Botanicheskaya" },
         { Id: 2, Name: "ДАННЫЕ", Address: "УДАЛЕНЫ" },
         { Id: 3, Name: "Oleg", Address: "Святая Русь"}
       ]
