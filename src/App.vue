@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" style="text-align: left;">
     <img alt="Vue logo" src="./assets/logo.png">
     <ContactsList/>
   </div>

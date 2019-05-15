@@ -1,24 +1,43 @@
 <template>
   <table class="table">
     <thead>
-      <th>Id</th>
-      <th>Name</th>
-      <th>Address</th>
-      <th><a class="button is-primary is-rounded" v-on:click="isHidden = !isHidden" v-if="isHidden">Добавить</a>
-      	<a class="delete is-small" v-if="!isHidden" v-on:click="isHidden = !isHidden"></a></th>
+      <th style="width:65px;">ID</th>
+      <th style="width:100px;">Name</th>
+      <th style="width:100px;">Address</th>
+      <th style="text-align: right; width: 40px;">
+        <a v-on:click="isHidden = !isHidden" v-if="isHidden">
+          <span class="icon has-text-success">
+            <i class="fa fa-lg fa-plus-circle"></i>
+          </span>
+        </a>
+        <a v-on:click="isHidden = !isHidden" v-if="!isHidden">
+          <span class="icon has-text-danger">
+            <i class="fa fa-lg fa-chevron-circle-up"></i>
+          </span></a>
+      </th>
     </thead>
     <tbody>
-    	<tr v-if="!isHidden">
-    		<td> ты</td>
-    		<td> kra</td>
-    		<td> sav</td>
-    		<td> chik</td>
-    	</tr>
+      <tr v-if="!isHidden">
+        <td style="width:65px;"><input class="input is-hovered" type="text" placeholder="ID"></td>
+        <td style="width:40px;"><input class="input is-hovered" type="text" placeholder="Name"></td>
+        <td style="width:40px;"><input class="input is-hovered" type="text" placeholder="Address"></td>
+        <td style="text-align: right; width:40px;">
+          <a v-on:click="isHidden = !isHidden">
+            <span class="icon has-text-success">
+              <i class="fa fa-lg fa-plus-circle"></i>
+            </span>
+          </a>
+        </td>
+      </tr>
       <tr v-for="row in contacts" :key="row.Id">
-        <td>{{ row.Id }}</td>
+        <td style="text-align:right;">{{ row.Id }}</td>
         <td>{{ row.Name }}</td>
         <td>{{ row.Address }}</td>
-        <td><a class="button is-danger is-rounded" @click="clicked(row)">&nbsp;&nbsp;Удалить&nbsp;&nbsp;</a></td>
+        <td style="text-align: right;">
+          <a @click="clicked(row)">
+            <span class="icon has-text-grey">
+              <i class="fa fa-lg fa-times-circle"></i>
+            </span></a></td>
       </tr>
     </tbody>
   </table>
@@ -28,9 +47,9 @@ export default {
   data: function() {
     return {
       contacts: [
-      	{ Id: 1, Name: "Pavel", Address: "Botanicheskaya" },
+        { Id: 1, Name: "Pavel", Address: "Botanicheskaya" },
         { Id: 2, Name: "ДАННЫЕ", Address: "УДАЛЕНЫ" },
-        { Id: 3, Name: "Oleg", Address: "Святая Русь"}
+        { Id: 3, Name: "Oleg", Address: "Святая Русь" }
       ],
       isHidden: true
     }
