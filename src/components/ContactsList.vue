@@ -6,35 +6,37 @@
       <th>Address</th>
     </thead>
     <tbody>
-      <tr>
-        <td>1</td>
-        <td>Pavel</td>
-        <td>Botanicheskaya</td>
+      <tr v-for="row in contacts" :key="row.Id">
+        <td>{{ row.Id }}</td>
+        <td>{{ row.Name }}</td>
+        <td>{{ row.Address }}</td>
       </tr>
     </tbody>
   </table>
 </template>
 <script>
 export default {
-  data: {
-    contacts: [{
-        Id: 1,
-        Name: "Pavel",
-        Address: "Botanicheskaya"
-      },
-      {
-        Id: 2,
-        Name: "Semen",
-        Address: "Botanicheskaya"
-      },
-      {
-        Id: 3,
-        Name: "Oleg",
-        Address: "Dickinstan"
-      }
-    ]
+  data: function() {
+    return {
+      contacts: [{
+          Id: 1,
+          Name: "Pavel",
+          Address: "Botanicheskaya"
+        },
+        {
+          Id: 2,
+          Name: "Semen",
+          Address: "Botanicheskaya"
+        },
+        {
+          Id: 3,
+          Name: "Oleg",
+          Address: "Dickinstan"
+        }
+      ]
+    }
   }
 };
 </script>
-<style scoped>
-</style>
+<stile scoped>
+</stile>
